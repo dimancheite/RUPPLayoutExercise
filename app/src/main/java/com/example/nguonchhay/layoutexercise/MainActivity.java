@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final int MAIN_ACTIVITY_REGISTER_CODE = 123;
 
-    protected String fullName = "", email = "", password = "";
+    protected String fullName = "", email = "", password = "", sex = "";
     protected EditText editEmail, editPassword;
 
     @Override
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         intent.putExtra("fullName", fullName);
                         intent.putExtra("email", email);
+                        intent.putExtra("sex", sex);
                         startActivity(intent);
                     } else {
                         Toast.makeText(MainActivity.this, "Email or Password are incorrect.", Toast.LENGTH_SHORT).show();
@@ -67,8 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 fullName = data.getStringExtra("fullName");
                 email = data.getStringExtra("email");
                 password = data.getStringExtra("password");
-
-                System.out.println(fullName + " - " + email + " - " + password);
+                sex = data.getStringExtra("sex");
             }
         }
     }

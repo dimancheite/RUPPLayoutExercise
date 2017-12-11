@@ -22,6 +22,9 @@ public class HomeActivity extends AppCompatActivity {
         TextView txvEmail = (TextView) findViewById(R.id.txvEmail);
         txvEmail.setText(intent.getStringExtra("email"));
 
+        TextView txvSex = (TextView) findViewById(R.id.txvSex);
+        txvSex.setText(intent.getStringExtra("sex"));
+
         Button btnLogout = (Button) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
